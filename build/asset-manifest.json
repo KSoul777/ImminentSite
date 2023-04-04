@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7d2c8248.chunk.css",
+    "main.js": "/static/js/main.e76d40dc.chunk.js",
+    "main.js.map": "/static/js/main.e76d40dc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b7579d91.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b7579d91.js.map",
+    "static/js/2.1cba316d.chunk.js": "/static/js/2.1cba316d.chunk.js",
+    "static/js/2.1cba316d.chunk.js.map": "/static/js/2.1cba316d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9a9941f71c5be527572bf48035d20fce.js": "/precache-manifest.9a9941f71c5be527572bf48035d20fce.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7d2c8248.chunk.css.map": "/static/css/main.7d2c8248.chunk.css.map",
+    "static/js/2.1cba316d.chunk.js.LICENSE.txt": "/static/js/2.1cba316d.chunk.js.LICENSE.txt",
+    "static/media/bastion2.jpg": "/static/media/bastion2.2443cec7.jpg",
+    "static/media/immiennt_logo_full_white.png": "/static/media/immiennt_logo_full_white.fad5b8e9.png",
+    "static/media/paper-kit.scss?v=1.2.0": "/static/media/nucleo-icons.f32ed5ad.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b7579d91.js",
+    "static/js/2.1cba316d.chunk.js",
+    "static/css/main.7d2c8248.chunk.css",
+    "static/js/main.e76d40dc.chunk.js"
+  ]
+}

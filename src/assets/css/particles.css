@@ -1,0 +1,919 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #b61924;
+    background-image: url("https://bnetcmsus-a.akamaihd.net/cms/blog_header/sn/SNMSPLA4B4HZ1572643755610.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+
+.example {
+    position: absolute !important;
+}
+
+.container {
+    z-index: 3;
+}
+
+.buttonHip {
+    border: 1px solid green;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    height: 50px;
+    width: 200px;
+    border-radius: 20px 5px 20px 0px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    font: 15px sans-serif;
+    font-weight: 300;
+    text-shadow: 0 0 20px #fff;
+    text-transform: uppercase;
+    -webkit-animation: breath2 2s .5s infinite alternate;
+    animation: breath2 2s .5s infinite alternate;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.buttonHip:before {
+    content: "";
+    display: block;
+    width: calc(100% - 22px);
+    height: calc(50px - 8px);
+    -webkit-animation: breath 2s infinite alternate;
+    animation: breath 2s infinite alternate;
+    left: 10px;
+    top: 3px;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px 3px 15px 3px;
+}
+
+.buttonHip.fire {
+    border-color: #ffeca8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 138, 48, 0.6)), to(rgba(240, 96, 29, 0.6)));
+    background-image: linear-gradient(to bottom, rgba(255, 138, 48, 0.6), rgba(240, 96, 29, 0.6));
+    -webkit-box-shadow: 0 0 70px rgba(255, 138, 48, 0.6), 0 5px 20px rgba(255, 138, 48, 0.6), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    box-shadow: 0 0 70px rgba(255, 138, 48, 0.6), 0 5px 20px rgba(255, 138, 48, 0.6), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #ffeca8;
+}
+
+.buttonHip.fire:before {
+    -webkit-box-shadow: inset 0 0 30px 0 #ffeca8;
+    box-shadow: inset 0 0 30px 0 #ffeca8;
+}
+
+.buttonHip.ice {
+    border-color: #a8ecff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 138, 255, 0.5)), to(rgba(29, 96, 240, 0.5)));
+    background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+    -webkit-box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #a8ecff;
+}
+
+.buttonHip.ice:before {
+    -webkit-box-shadow: inset 0 0 30px 0 #a8ecff;
+    box-shadow: inset 0 0 30px 0 #a8ecff;
+}
+
+.buttonHip:hover.fire {
+    -webkit-box-shadow: 0 0 70px rgba(255, 138, 48, 0.8), 0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    box-shadow: 0 0 70px rgba(255, 138, 48, 0.8), 0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+}
+
+.buttonHip:hover.fire:before {
+    -webkit-box-shadow: inset 0 0 50px 0 #ffeca8;
+    box-shadow: inset 0 0 50px 0 #ffeca8;
+}
+
+.buttonHip:hover.ice {
+    -webkit-box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff;
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff;
+}
+
+.buttonHip:hover.ice:before {
+    -webkit-box-shadow: inset 0 0 50px 0 #a8ecff;
+    box-shadow: inset 0 0 50px 0 #a8ecff;
+}
+
+/* .buttonHip+.buttonHip {
+    margin-top: 15px;
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+} */
+
+@-webkit-keyframes breath {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    100% {
+        -webkit-transform: scaleX(0.95);
+        transform: scaleX(0.95);
+    }
+}
+
+@keyframes breath {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    100% {
+        -webkit-transform: scaleX(0.95);
+        transform: scaleX(0.95);
+    }
+}
+
+@-webkit-keyframes breath2 {
+    0% {
+        -webkit-transform: skewX(-10deg) scaleX(1);
+        transform: skewX(-10deg) scaleX(1);
+    }
+
+    100% {
+        -webkit-transform: skewX(-10deg) scaleX(0.95);
+        transform: skewX(-10deg) scaleX(0.95);
+    }
+}
+
+@keyframes breath2 {
+    0% {
+        -webkit-transform: skewX(-10deg) scaleX(1);
+        transform: skewX(-10deg) scaleX(1);
+    }
+
+    100% {
+        -webkit-transform: skewX(-10deg) scaleX(0.95);
+        transform: skewX(-10deg) scaleX(0.95);
+    }
+}
+
+.ref {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 5px 8px;
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: 300;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.ref::first-letter {
+    font-size: 12px;
+}
+
+
+  #ui {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    transform: translate(-50%, -50%);
+    transition: 100ms;
+  }
+  #ui .fire {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #0DEAF5;
+    filter: blur(20px) contrast(30);
+    border: 250px solid #000;
+    border-bottom-color: transparent;
+    border-radius: 40%;
+    box-sizing: border-box;
+    transform: scale(0.4, 1);
+  }
+  #ui .fire .burn {
+    position: absolute;
+    top: 500px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 100%;
+  }
+  #ui .fire .burn.heat:nth-child(1) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(1) {
+    height: 20px;
+    margin-left: -102px;
+    animation: burning 1284ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(2) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(2) {
+    height: 29px;
+    margin-left: -11px;
+    animation: burning 1291ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(3) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(3) {
+    height: 12px;
+    margin-left: -136px;
+    animation: burning 1458ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(4) {
+    height: 4px;
+  }
+  #ui .fire .burn:nth-child(4) {
+    height: 44px;
+    margin-left: -46px;
+    animation: burning 1632ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(5) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(5) {
+    height: 38px;
+    margin-left: 61px;
+    animation: burning 1356ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(6) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(6) {
+    height: 35px;
+    margin-left: 158px;
+    animation: burning 1327ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(7) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(7) {
+    height: 39px;
+    margin-left: -124px;
+    animation: burning 2940ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(8) {
+    height: 5px;
+  }
+  #ui .fire .burn:nth-child(8) {
+    height: 41px;
+    margin-left: -213px;
+    animation: burning 2101ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(9) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(9) {
+    height: 29px;
+    margin-left: -237px;
+    animation: burning 1947ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(10) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(10) {
+    height: 19px;
+    margin-left: -218px;
+    animation: burning 1897ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(11) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(11) {
+    height: 49px;
+    margin-left: -67px;
+    animation: burning 1823ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(12) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(12) {
+    height: 3px;
+    margin-left: 0px;
+    animation: burning 2562ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(13) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(13) {
+    height: 2px;
+    margin-left: 174px;
+    animation: burning 2971ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(14) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(14) {
+    height: 45px;
+    margin-left: 133px;
+    animation: burning 2403ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(15) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(15) {
+    height: 15px;
+    margin-left: -125px;
+    animation: burning 2361ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(16) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(16) {
+    height: 50px;
+    margin-left: -172px;
+    animation: burning 2654ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(17) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(17) {
+    height: 45px;
+    margin-left: 3px;
+    animation: burning 1955ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(18) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(18) {
+    height: 45px;
+    margin-left: -200px;
+    animation: burning 1744ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(19) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(19) {
+    height: 5px;
+    margin-left: -222px;
+    animation: burning 2729ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(20) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(20) {
+    height: 28px;
+    margin-left: -73px;
+    animation: burning 1538ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(21) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(21) {
+    height: 29px;
+    margin-left: -188px;
+    animation: burning 2412ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(22) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(22) {
+    height: 5px;
+    margin-left: -49px;
+    animation: burning 1935ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(23) {
+    height: 4px;
+  }
+  #ui .fire .burn:nth-child(23) {
+    height: 50px;
+    margin-left: -35px;
+    animation: burning 2721ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(24) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(24) {
+    height: 46px;
+    margin-left: 20px;
+    animation: burning 2191ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(25) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(25) {
+    height: 39px;
+    margin-left: -52px;
+    animation: burning 2432ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(26) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(26) {
+    height: 1px;
+    margin-left: -175px;
+    animation: burning 2402ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(27) {
+    height: 7px;
+  }
+  #ui .fire .burn:nth-child(27) {
+    height: 47px;
+    margin-left: -90px;
+    animation: burning 2663ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(28) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(28) {
+    height: 14px;
+    margin-left: -78px;
+    animation: burning 1250ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(29) {
+    height: 4px;
+  }
+  #ui .fire .burn:nth-child(29) {
+    height: 19px;
+    margin-left: 146px;
+    animation: burning 2942ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(30) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(30) {
+    height: 24px;
+    margin-left: 155px;
+    animation: burning 1216ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(31) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(31) {
+    height: 10px;
+    margin-left: -179px;
+    animation: burning 1968ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(32) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(32) {
+    height: 10px;
+    margin-left: -229px;
+    animation: burning 1341ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(33) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(33) {
+    height: 31px;
+    margin-left: -126px;
+    animation: burning 1305ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(34) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(34) {
+    height: 48px;
+    margin-left: -47px;
+    animation: burning 1368ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(35) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(35) {
+    height: 14px;
+    margin-left: -183px;
+    animation: burning 2728ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(36) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(36) {
+    height: 20px;
+    margin-left: 226px;
+    animation: burning 1114ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(37) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(37) {
+    height: 20px;
+    margin-left: -39px;
+    animation: burning 1782ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(38) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(38) {
+    height: 32px;
+    margin-left: -20px;
+    animation: burning 1771ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(39) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(39) {
+    height: 38px;
+    margin-left: -56px;
+    animation: burning 1964ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(40) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(40) {
+    height: 48px;
+    margin-left: -91px;
+    animation: burning 1045ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(41) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(41) {
+    height: 10px;
+    margin-left: 37px;
+    animation: burning 2085ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(42) {
+    height: 5px;
+  }
+  #ui .fire .burn:nth-child(42) {
+    height: 15px;
+    margin-left: 54px;
+    animation: burning 1460ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(43) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(43) {
+    height: 42px;
+    margin-left: -87px;
+    animation: burning 1298ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(44) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(44) {
+    height: 33px;
+    margin-left: 209px;
+    animation: burning 2034ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(45) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(45) {
+    height: 34px;
+    margin-left: 51px;
+    animation: burning 2786ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(46) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(46) {
+    height: 22px;
+    margin-left: 119px;
+    animation: burning 2728ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(47) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(47) {
+    height: 17px;
+    margin-left: 18px;
+    animation: burning 1310ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(48) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(48) {
+    height: 13px;
+    margin-left: -105px;
+    animation: burning 1714ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(49) {
+    height: 5px;
+  }
+  #ui .fire .burn:nth-child(49) {
+    height: 32px;
+    margin-left: 238px;
+    animation: burning 1374ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(50) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(50) {
+    height: 41px;
+    margin-left: -160px;
+    animation: burning 1981ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(51) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(51) {
+    height: 47px;
+    margin-left: 118px;
+    animation: burning 1235ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(52) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(52) {
+    height: 17px;
+    margin-left: -128px;
+    animation: burning 2103ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(53) {
+    height: 7px;
+  }
+  #ui .fire .burn:nth-child(53) {
+    height: 27px;
+    margin-left: 214px;
+    animation: burning 2775ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(54) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(54) {
+    height: 33px;
+    margin-left: -236px;
+    animation: burning 2118ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(55) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(55) {
+    height: 44px;
+    margin-left: -174px;
+    animation: burning 1738ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(56) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(56) {
+    height: 22px;
+    margin-left: -57px;
+    animation: burning 2422ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(57) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(57) {
+    height: 39px;
+    margin-left: 127px;
+    animation: burning 1511ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(58) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(58) {
+    height: 40px;
+    margin-left: 100px;
+    animation: burning 1518ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(59) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(59) {
+    height: 31px;
+    margin-left: -116px;
+    animation: burning 2353ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(60) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(60) {
+    height: 43px;
+    margin-left: 175px;
+    animation: burning 1499ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(61) {
+    height: 10px;
+  }
+  #ui .fire .burn:nth-child(61) {
+    height: 44px;
+    margin-left: -16px;
+    animation: burning 1423ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(62) {
+    height: 5px;
+  }
+  #ui .fire .burn:nth-child(62) {
+    height: 32px;
+    margin-left: 249px;
+    animation: burning 2932ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(63) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(63) {
+    height: 11px;
+    margin-left: 45px;
+    animation: burning 2593ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(64) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(64) {
+    height: 34px;
+    margin-left: -242px;
+    animation: burning 1651ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(65) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(65) {
+    height: 5px;
+    margin-left: -197px;
+    animation: burning 2168ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(66) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(66) {
+    height: 21px;
+    margin-left: 84px;
+    animation: burning 1364ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(67) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(67) {
+    height: 5px;
+    margin-left: 118px;
+    animation: burning 1355ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(68) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(68) {
+    height: 17px;
+    margin-left: -26px;
+    animation: burning 1324ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(69) {
+    height: 8px;
+  }
+  #ui .fire .burn:nth-child(69) {
+    height: 11px;
+    margin-left: 87px;
+    animation: burning 2514ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(70) {
+    height: 7px;
+  }
+  #ui .fire .burn:nth-child(70) {
+    height: 2px;
+    margin-left: 36px;
+    animation: burning 1555ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(71) {
+    height: 1px;
+  }
+  #ui .fire .burn:nth-child(71) {
+    height: 24px;
+    margin-left: -216px;
+    animation: burning 2632ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(72) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(72) {
+    height: 32px;
+    margin-left: -181px;
+    animation: burning 1005ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(73) {
+    height: 6px;
+  }
+  #ui .fire .burn:nth-child(73) {
+    height: 46px;
+    margin-left: 67px;
+    animation: burning 1152ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(74) {
+    height: 7px;
+  }
+  #ui .fire .burn:nth-child(74) {
+    height: 42px;
+    margin-left: 149px;
+    animation: burning 2453ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(75) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(75) {
+    height: 7px;
+    margin-left: 247px;
+    animation: burning 2018ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(76) {
+    height: 3px;
+  }
+  #ui .fire .burn:nth-child(76) {
+    height: 17px;
+    margin-left: 141px;
+    animation: burning 2651ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(77) {
+    height: 2px;
+  }
+  #ui .fire .burn:nth-child(77) {
+    height: 22px;
+    margin-left: 135px;
+    animation: burning 2464ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(78) {
+    height: 9px;
+  }
+  #ui .fire .burn:nth-child(78) {
+    height: 26px;
+    margin-left: 76px;
+    animation: burning 2510ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(79) {
+    height: 4px;
+  }
+  #ui .fire .burn:nth-child(79) {
+    height: 29px;
+    margin-left: -158px;
+    animation: burning 1812ms -3000ms infinite linear;
+  }
+  #ui .fire .burn.heat:nth-child(80) {
+    height: 4px;
+  }
+  #ui .fire .burn:nth-child(80) {
+    height: 25px;
+    margin-left: -100px;
+    animation: burning 2348ms -3000ms infinite linear;
+  }
+
+  @keyframes burning {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-600px);
+    }
+  }
+
+  .container #buttons{
+    display: flex; 
+    margin: 5em 1em 0px; 
+    justify-content: space-around;
+  }
+
+  .container .title-brand span{
+    display: block; 
+    font-weight: 400;
+    font-size: 20px; 
+    text-align: right;
+    margin-right: 12vh;
+  }
+  
